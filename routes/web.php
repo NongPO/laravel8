@@ -21,8 +21,35 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::get('/table', function () {
     return view('table');
 });
+
+use App\Http\Controllers\MyProfileController;
+
+Route::get("/myprofile/create", [MyProfileController::class, "create"]);
+
+Route::get("/myprofile/{id}/edit", [ MyProfileController::class , "edit" ] );
+
+Route::get("/myprofile/{id}", [ MyProfileController::class , "show" ]);
+
+Route::get( "/newgallery" , function(){
+	$ant = "https://cdn3.movieweb.com/i/article/Oi0Q2edcVVhs4p1UivwyyseezFkHsq/1107:50/Ant-Man-3-Talks-Michael-Douglas-Update.jpg";
+$bird = "https://cdn1.thr.com/sites/default/files/imagecache/scale_crop_768_433/2019/04/captain_america-civil_war-anthony_mackie-photofest-h_2019.jpg";
+$cat = "http://www.onyxtruth.com/wp-content/uploads/2017/06/black-panther-movie-onyx-truth.jpg";
+$god = "https://amp.insider.com/images/5b7acee73cccd122008b45ac-750-563.jpg";
+$spider = "https://icdn5.digitaltrends.com/image/spiderman-far-from-home-poster-2-720x720.jpg"; 
+
+return view("newgallery/ant", compact("ant","bird","cat","god","spider") );
+});
+Route::get( "/newgallery" , [ MyProfileController::class , "newgallery" ] );
+
+Route::get( "/newgallery/ant" , [ MyProfileController::class , "ant" ] );
+
+
+
+
+
+
