@@ -48,6 +48,16 @@ Route::get( "/newgallery" , [ MyProfileController::class , "newgallery" ] );
 
 Route::get( "/newgallery/ant" , [ MyProfileController::class , "ant" ] );
 
+use App\Http\Controllers\Covid19Controller;
+
+Route::get( "/coronavirus" ,[ MyProfileController::class , "coronavirus" ] );
+
+Route::get('/covid19', [ Covid19Controller::class,"index" ]);
+
+
+
+
+
 
 
 
