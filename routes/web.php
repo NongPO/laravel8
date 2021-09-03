@@ -68,6 +68,7 @@ Route::delete('/covid19/{id}', [Covid19Controller::class, 'destroy']);
 
 use App\Http\Controllers\StaffController;
 
+Route::middleware(['auth','role:admin'])->group(function () {
 
 Route::get('/staff', [StaffController::class, 'index']);
 
@@ -82,3 +83,5 @@ Route::post("/staff", [StaffController::class, "store"]);
 Route::patch("/staff/{id}", [StaffController::class, "update"]);
 
 Route::delete('/staff/{id}', [StaffController::class, 'destroy']);
+
+});
