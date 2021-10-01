@@ -1,4 +1,4 @@
-@extends('bootstrap-theme')
+@extends('layout.main')
 @section('content')
 
 <h1>Staff Puwadon</h1>
@@ -39,6 +39,6 @@
     </tr>
     @endforeach
 </table>
-<div class="mt-4" style="width:50%">{{ $staffs->appends(['search' => request('search')])->links() }}</div>
+<div class="col-md-12" style="width:50%">{{ $staffs->appends(['search' => request('search')])->links() }}</div>
 <div class="mt-4">{{ $staffs->links() }}</div>
 @endsection

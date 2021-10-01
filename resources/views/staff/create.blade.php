@@ -1,4 +1,4 @@
-@extends('bootstrap-theme')
+@extends('layout.main')
 
 @section('content')
 
@@ -8,9 +8,9 @@
     @method('POST')
     @csrf
 
-    @include ('staff.form')
+   
 
-    <div class="form-group">
+    <div class="col-md-12">
         <input class="btn btn-primary" type="submit" value="Create">
     </div>
 
