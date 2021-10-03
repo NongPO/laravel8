@@ -19,18 +19,20 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+        <a class="nav-link" href="{{ url('/product') }}">
+            <i class="fa fa-home"></i> หน้าหลัก
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="#">Buttons</a>
-            <a class="collapse-item" href="#">Cards</a>
-          </div>
-        </div>
-      </li>
+    </li>
+    <li class="nav-item">
+        <a  class="nav-link" href="{{ url('/order-product') }}">
+            <i class="fa fa-shopping-cart"></i> ตะกร้าของฉัน
+        </a>
+    </li>
+    <li class="nav-item">
+        <a  class="nav-link" href="{{ url('/order') }}">
+            <i class="fa fa-box"></i> คำสั่งซื้อของฉัน
+        </a>
+    </li>
 
     </ul>
     <!-- End of Sidebar -->

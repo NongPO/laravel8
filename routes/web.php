@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\OrderProductController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,7 +89,17 @@ Route::patch("/staff/{id}", [StaffController::class, "update"]);
 Route::delete('/staff/{id}', [StaffController::class, 'destroy']);
 
 });
+
 Route::resource('post', 'PostController');
 Route::resource('post', 'PostController');
 Route::resource('book', 'BookController');
 Route::resource('book', 'BookController');
+
+Route::resource('product', ProductController::class);
+
+Route::middleware(['auth'])->group(function () {
+Route::resource('order', OrderController::class);
+Route::resource('payment', PaymentController::class);
+Route::resource('order-product', OrderProductController::class);
+
+});
